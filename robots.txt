@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://mngon.blog/sitemap-index.xml
-Host: https://mngon.blog
+Sitemap: https://devhudi.github.io/sitemap-index.xml
+Host: https://devhudi.github.io
