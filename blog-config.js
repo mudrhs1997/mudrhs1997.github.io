@@ -1,17 +1,17 @@
 module.exports = {
-  title: "𝗺𝗻𝗴𝗼𝗻",
-  description: "책상",
-  author: "myunggon",
-  siteUrl: "https://mngon.blog",
+  title: "hoodie",
+  description: "Hello :) I'm Hudi who developed gatsby-starter-hoodie theme.",
+  author: "Hudi",
+  siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
   links: {
-    github: "https://github.com/mudrhs1997",
-    linkedIn: "",
-    facebook: "",
-    instagram: "",
-    email: "mudrhs1997@naver.com",
+    github: "https://github.com/devHudi",
+    linkedIn: "https://linkedin.com",
+    facebook: "https://www.facebook.com",
+    instagram: "https://www.instagram.com",
+    email: "mailto:devhudi@gmail.com",
   },
   utterances: {
-    repo: "mudrhs1997/mudrhs1997.github.io",
+    repo: "devHudi/gatsby-starter-hoodie",
     type: "pathname",
   },
 }
