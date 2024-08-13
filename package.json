@@ -53,6 +53,7 @@
     "utterances-react-component": "^1.0.0"
   },
   "devDependencies": {
+    "ajv": "^8.17.1",
     "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^5.0.0",
     "prettier": "2.8.8"
