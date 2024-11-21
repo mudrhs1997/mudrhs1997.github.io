@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://mudrhs1997.github.io/sitemap-index.xml
-Host: https://mudrhs1997.github.io
+Sitemap: https://devhudi.github.io/sitemap-index.xml
+Host: https://devhudi.github.io
