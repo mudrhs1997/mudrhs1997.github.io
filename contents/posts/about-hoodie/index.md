@@ -1,11 +1,10 @@
 ---
-title: "🎇 1. About gatsby-starter-hoodie"
+title: "Clean Architecture + MVVM 정리"
 description: "Let's learn about gatsby-starter-hoodie."
-date: 2021-05-01
-update: 2021-05-01
+date: 2024-12-18
+update: 2024-12-18
 tags:
-  - hoodie
-  - about
+  - 아키텍처
 series: "Getting started your blog with gatsby-starter-hoodie"
 ---
 
@@ -25,7 +24,7 @@ Start your blog with a neatly designed gatsby-starter-hoodie that supports dark 
 - Series Categorization
 - Responsive Web
 - SEO
-- Utterance (Comment widget)
+- Giscus
 
 ## Let's get started
 
