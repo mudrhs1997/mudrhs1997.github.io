@@ -24,17 +24,17 @@ series: ""
 #### Code
   
 `before`
-<img src="/Users/mangon/GitHub/mudrhs1997.github.io/contents/posts/monospaced-font/code-before.png" width="350" height="100"/>
+![code-before](./code-before.png)
 `after`
-<img src="/Users/mangon/GitHub/mudrhs1997.github.io/contents/posts/monospaced-font/code-after.png" width="350" height="100"/>
+![code-after](./code-after.png)
 
   
 #### Command line
   
 `before`
-<img src="/Users/mangon/GitHub/mudrhs1997.github.io/contents/posts/monospaced-font/command-before.png" width="350" height="100"/>
+![command-before](./command-before.png)
 `after`
-<img src="/Users/mangon/GitHub/mudrhs1997.github.io/contents/posts/monospaced-font/command-after.png" width="350" height="100"/>
+![command-after](./command-after.png)
     
 
 ### 설정 방법
@@ -44,6 +44,6 @@ Xcode의 테마 변경을 통해 글꼴 및 스타일을 변경할 수 있습니
 ``` swift
 Xcode -> Settings -> Themes -> Font
 ```
-![](/Users/mangon/GitHub/mudrhs1997.github.io/contents/posts/monospaced-font/xcode-setting.png)
+![xcode-setting](./xcode-setting.png)
 
 
