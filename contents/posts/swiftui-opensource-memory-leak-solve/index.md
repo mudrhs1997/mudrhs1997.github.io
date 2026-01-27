@@ -20,7 +20,7 @@ SwiftUI 프로젝트에서 외부 라이브러리를 도입한 후, ViewModel의
 ## 재현
 
 Popup은 표시 여부를 외부 상태에 `Binding`합니다. 이때 바인딩 대상이 **View의 @State**인지, **외부 객체(ViewModel)의 상태**인지에 따라 결과가 달랐습니다.
-### 상황 1: View의 `@State` 바인딩 (누수 X)
+### View의 `@State` 바인딩
 
 ``` swift
 struct ContentView: View {
@@ -37,7 +37,7 @@ struct ContentView: View {
 ```
 
 `@State`를 바인딩한 경우, 팝업 표시/해제 후 객체가 정상 해제되는 흐름을 확인했습니다.
-### 상황 2: ViewModel 상태 바인딩 (누수 O)
+### ViewModel 상태 바인딩
 
 프로젝트는 MVVM 패턴을 사용하고 있어 이 케이스가 실제 시나리오였습니다.
 
@@ -118,7 +118,7 @@ public struct FullscreenPopup<Item: Equatable, PopupContent: View>: ViewModifier
 ## 해결 과정
 
 순환 참조를 끊기 위해 세 가지 접근 방법을 시도하였습니다.
-### 1️⃣ class → struct로 변경
+### class → struct로 변경
 
 `DispatchWorkHolder`를 값 타입으로 바꾸면 참조 카운트 증가를 피할 수 있다고 생각해 시도했습니다.
 
@@ -153,7 +153,7 @@ public struct FullscreenPopup<Item: Equatable, PopupContent: View>: ViewModifier
 - 값 타입의 복사로 인해 참조가 끊길 가능성이 존재합니다. 
 - SwiftUI의 View는 자주 재생성됩니다. 따라서 이전 work를 안정적으로 취소 및 교체의 목적이 흔들릴 수 있습니다.
 
-### 2️⃣ 약한 참조
+### 약한 참조
 
 약한 참조를 하면 Reference count를 증가시키지 않습니다. `setupAutohide()` 내부의 클로저에서 `DispatchWorkHolder`를 재참조하기 때문에 cycle이 생긴다고 생각하였습니다. 이는 클로저 구문에서 `weak self`를 통해 해결할 수 있을 것이라 생각하였습니다. 
 
@@ -171,7 +171,7 @@ dispatchWorkHolder.work = DispatchWorkItem(block: { [weak self, weak isPresented
 
 이는 현재 `FullscreenPopup`은 구조체이기 때문에 발생한 에러입니다. 구조체는 ARC의 대상이 아니고 약한 참조의 개념은 class에만 존재하기 때문에 이는 해결 방법이 될 수 없었습니다.
 
-### 3️⃣ 직접 할당 해제
+### 직접 할당 해제
 
 참조 횟수(Reference Count)를 줄이기 위해, **작업이 완료되는 시점에 `DispatchWorkItem`을 직접 `nil`로 설정**하여 사이클을 끊어주었습니다.
 
